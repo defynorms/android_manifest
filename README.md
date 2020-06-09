@@ -2,9 +2,6 @@
 
  Getting Started
 ---------------
-To get started with the ArrowOS sources, you'll need to get
-familiar with [Git and Repo](https://source.android.com/setup/build/downloading).
-
 To initialize your local repository, use command:
 
 ```bash
