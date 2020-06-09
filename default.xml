@@ -8,20 +8,10 @@
   <remote  name="github"
            fetch="https://github.com/" />
 
-  <remote  name="arrow"
-           fetch="https://github.com/ArrowOS"
-           review="https://review.arrowos.net/"
-           revision="refs/heads/arrow-10.0" />
-
-  <remote  name="ArrowOS-Devices"
-           fetch="https://github.com/ArrowOS-Devices"
-	   review="https://review.arrowos.net/"
-           revision="refs/heads/arrow-10.0" />
-
   <default revision="refs/tags/android-10.0.0_r37"
            remote="aosp"
            sync-j="4"
-	   sync-c="true"/>
+           sync-c="true"/>
 
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -800,8 +790,12 @@
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
-  <!-- Arrow changes -->
-  <include name="remove.xml" />
-  <include name="arrow.xml" />
+  <!-- Remove Unused AOSP -->
+  <include name="snippets/remove.xml" />
+  
+  <!-- ArrowOS Snippets -->
+  <include name="snippets/arrow.xml" />
 
+  <!-- DefyNorms Snippets -->
+  <include name="snippets/defynorms.xml" />
 </manifest>

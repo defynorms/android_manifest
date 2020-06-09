@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="DefyNorms"
+           fetch="https://github.com/DefyNorms"
+           revision="ten" />
+
+  <remote  name="DefyNorms-Devices"
+           fetch="https://github.com/DefyNorms-Devices"
+           revision="ten" />
+  
+</manifest>

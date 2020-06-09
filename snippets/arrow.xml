@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <project path="manifest" name="android_manifest" remote="arrow" />
+  <remote  name="arrow"
+           fetch="https://github.com/ArrowOS"
+           review="https://review.arrowos.net/"
+           revision="refs/heads/arrow-10.0" />
+
+  <remote  name="ArrowOS-Devices"
+           fetch="https://github.com/ArrowOS-Devices"
+	   review="https://review.arrowos.net/"
+           revision="refs/heads/arrow-10.0" />
+  
   <project path="build/make" name="android_build" remote="arrow" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -11,11 +20,14 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
+  
   <project path="build/blueprint" name="android_build_blueprint" groups="pdk,tradefed" remote="arrow" />
+  
   <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="arrow" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
+  
   <project path="platform_testing" name="android_platform_testing" remote="arrow" />
 
   <!-- Arrow Core Repos -->
@@ -106,7 +118,7 @@
   <project path="hardware/qcom/media-caf/msm8998" name="android_hardware_qcom_media" groups="qcom" remote="arrow" revision="arrow-10.0-caf-8998" />
   <project path="hardware/interfaces" name="android_hardware_interfaces" remote="arrow" />
   <project path="hardware/arrow/interfaces" name="android_hardware_arrow_interfaces" remote="arrow" />
-<!--  <project path="hardware/arrow/telephony" name="android_hardware_arrow_telephony" remote="arrow" />-->
+  <!--  <project path="hardware/arrow/telephony" name="android_hardware_arrow_telephony" remote="arrow" />-->
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="arrow" />
   <project path="hardware/libhardware_legacy" name="android_hardware_libhardware_legacy" remote="arrow" />
   <project path="hardware/nxp/nfc" name="android_hardware_nxp_nfc" remote="arrow" />
